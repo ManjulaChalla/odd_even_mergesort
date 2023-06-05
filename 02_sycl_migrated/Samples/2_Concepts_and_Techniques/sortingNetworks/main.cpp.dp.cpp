@@ -56,7 +56,7 @@ int main(int argc, char **argv) try {
   printf("%s Starting...\n\n", argv[0]);
 
   printf("Starting up CUDA context...\n");
-   sycl::queue q = sycl::queue(gpu_selector_v);
+   sycl::queue q = sycl::queue(default_selector_v);
    std::cout << "\nRunning on " << q.get_device().get_info<info::device::name>()
             << "\n";
 
