@@ -46,7 +46,7 @@ This sample demonstrates the migration of the following prominent CUDA features:
 - Cooperative Groups
 - Shared Memory
 
-## Build the `odd-even merge-sort` Sample for CPU and GPU
+## Build the `odd-even mergesort` Sample for CPU and GPU
 
 > **Note**: If you have not already done so, set up your CLI
 > environment by sourcing  the `setvars` script in the root of your oneAPI installation.
