@@ -63,7 +63,7 @@ This sample demonstrates the migration of the following prominent CUDA features:
 For this sample, the SYCLomatic Tool automatically migrates 100% of the CUDA code to SYCL. Follow these steps to generate the SYCL code using the compatibility tool:
 
 1. git clone https://github.com/NVIDIA/cuda-samples.git
-2. cd cuda-samples/Samples/5_Domain_Specific/MonteCarloMultiGPU/
+2. cd cuda-samples/Samples/2_Concepts_and_Techniques/sortingNetworks
 3. Generate a compilation database with intercept-build
    ```
    intercept-build make
