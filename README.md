@@ -88,9 +88,8 @@ Perform the following steps:
     By default, this command sequence will build the `01_dpct_output`and `02_sycl_migrated` versions of the program.
 3. Run `02_sycl_migrated` for CPU and GPU.
      ```
-    make run_sm_cpu
-    make run_sm_gpu (runs on Level-Zero Backend)
-    make run_sm_gpu_opencl (runs on OpenCL Backend)
+    make run_cpu
+    make run_gpu 
     ```
 #### Troubleshooting
 
@@ -102,7 +101,7 @@ make VERBOSE=1
 If you receive an error message, troubleshoot the problem using the **Diagnostics Utility for Intel® oneAPI Toolkits**. The diagnostic utility provides configuration and system checks to help find missing dependencies, permissions errors, and other issues. See the [Diagnostics Utility for Intel® oneAPI Toolkits User Guide](https://www.intel.com/content/www/us/en/develop/documentation/diagnostic-utility-user-guide/top.html) for more information on using the utility.
 
 ### Example Output
-The following example is for `02_sycl_migrated` for GPU on Intel(R) UHD Graphics P630 [0x3e96] with Level Zero Backend.
+The following example is for `02_sycl_migrated` for GPU on Intel(R) UHD Graphics P630 [0x3e96].
 ```
 ./a.out Starting...
 
