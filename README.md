@@ -1,10 +1,10 @@
-﻿# `odd-even-merge-sort` Sample
+﻿# `oddEvenMergeSort` Sample
 
-The `odd-even-merge-sort` sample demonstrates how to use the **odd-even mergesort** algorithm (also known as "Batcher's odd–even mergesort"), which belongs to the class of sorting networks. Generally, this algorithm is not efficient for large sequences compared to algorithms with better asymptotic algorithmic complexity (merge sort or radix sort); however, this sort method might be the preferred algorithm for sorting batches of short-sized to mid-sized (key, value) array pairs.
+The `oddEvenMergeSort` sample demonstrates how to use the **odd-even mergesort** algorithm (also known as "Batcher's odd–even mergesort"), which belongs to the class of sorting networks. Generally, this algorithm is not efficient for large sequences compared to algorithms with better asymptotic algorithmic complexity (merge sort or radix sort); however, this sort method might be the preferred algorithm for sorting batches of short-sized to mid-sized (key, value) array pairs.
 
 | Property            | Description
 |:---                 |:---
-| What you will learn | How to begin migrating CUDA to SYCL*
+| What you will learn | How to begin migrating CUDA to SYCL
 | Time to complete    | 15 minutes
 
 ## Purpose
@@ -28,7 +28,7 @@ Refer [Workflow](https://www.intel.com/content/www/us/en/developer/tools/oneapi/
 ### CUDA source code evaluation
 In this implementation, a random sequence of power of 2 elements is given as input, and the algorithm sorts the sequence in parallel. The algorithm sorts the first half of the list and second half of the list separately. The algorithm then sorts the odd-indexed entries and the even-indexed entries separately. You need make only one more comparison-switch per pair of keys to sort the list completely.
 
-In this sample, the array length of **1048576** is the input size for the algorithm. The code checks for all the input sizes in the intervals of 2th power from array lengths from  **64** to **1048576** calculated for one iteration. The comparator swaps the value if top value is greater or equal to the bottom value.
+In this sample, the array length of 1048576 is the input size for the algorithm. The code checks for all the input sizes in the intervals of 2th power from array lengths from  64 to 1048576 calculated for one iteration. The comparator swaps the value if top value is greater or equal to the bottom value.
 
 This sample is migrated from NVIDIA CUDA sample. See the [sortingNetworks](https://github.com/NVIDIA/cuda-samples/tree/master/Samples/2_Concepts_and_Techniques/sortingNetworks) sample in the NVIDIA/cuda-samples GitHub.
 
