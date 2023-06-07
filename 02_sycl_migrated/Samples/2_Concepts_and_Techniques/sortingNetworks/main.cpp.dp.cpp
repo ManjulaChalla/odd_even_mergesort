@@ -148,7 +148,7 @@ int main(int argc, char **argv) try {
     if (arrayLength == N) {
       double dTimeSecs = 1.0e-3 * sdkGetTimerValue(&hTimer) / numIterations;
       printf(
-          "sortingNetworks-bitonic, Throughput = %.4f MElements/s, Time = %.5f "
+          "sortingNetworks-oddevenmergesort, Throughput = %.4f MElements/s, Time = %.5f "
           "s, Size = %u elements, NumDevsUsed = %u, Workgroup = %u\n",
           (1.0e-6 * (double)arrayLength / dTimeSecs), dTimeSecs, arrayLength, 1,
           threadCount);
