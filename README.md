@@ -86,10 +86,14 @@ Perform the following steps:
    ```
 
     By default, this command sequence will build the `01_dpct_output`and `02_sycl_migrated` versions of the program.
-3. Run `02_sycl_migrated` for CPU and GPU.
+3. Run `02_sycl_migrated` for  GPU.
      ```
-    make run_cpu
-    make run_gpu 
+    make run
+     ```
+   Run `02_sycl_migrated` for  CPU.
+     ```
+    export SYCL_dEVICE_FILTER=cpu
+    make run
     ```
 #### Troubleshooting
 
@@ -103,30 +107,166 @@ If you receive an error message, troubleshoot the problem using the **Diagnostic
 ### Example Output
 The following example is for `02_sycl_migrated` for GPU on Intel(R) UHD Graphics P630 [0x3e96].
 ```
-./a.out Starting...
+Running on Intel(R) UHD Graphics P630 [0x3e96]
+Allocating and initializing host arrays...
 
-MonteCarloMultiGPU
-==================
-Parallelization method  = streamed
-Problem scaling         = weak
-Number of GPUs          = 1
-Total number of options = 12
-Number of paths         = 262144
-main(): generating input data...
-main(): starting 1 host threads...
-main(): GPU statistics, streamed
-GPU Device #0: Intel(R) UHD Graphics P630 [0x3e96]
-Options         : 12
-Simulation paths: 262144
+Allocating and initializing CUDA arrays...
 
-Total time (ms.): 3.139000
-        Note: This is elapsed time for all to compute.
-Options per sec.: 3822.873601
-main(): comparing Monte Carlo and Black-Scholes results...
+Running GPU oddevenMergesort (1 identical iterations)...
+
+Testing array length 64 (16384 arrays per batch)...
+Average time: 203.675995 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 128 (8192 arrays per batch)...
+Average time: 5.088000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 256 (4096 arrays per batch)...
+Average time: 6.143000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 512 (2048 arrays per batch)...
+Average time: 7.210000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 1024 (1024 arrays per batch)...
+Average time: 11.907000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 2048 (512 arrays per batch)...
+Average time: 14.869000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 4096 (256 arrays per batch)...
+Average time: 18.344999 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 8192 (128 arrays per batch)...
+Average time: 22.009001 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 16384 (64 arrays per batch)...
+Average time: 26.112000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 32768 (32 arrays per batch)...
+Average time: 30.167999 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 65536 (16 arrays per batch)...
+Average time: 34.814999 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 131072 (8 arrays per batch)...
+Average time: 39.974998 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 262144 (4 arrays per batch)...
+Average time: 45.018002 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 524288 (2 arrays per batch)...
+Average time: 50.520000 ms
+
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
+Testing array length 1048576 (1 arrays per batch)...
+Average time: 56.367001 ms
+
+sortingNetworks-oddevenmergesort, Throughput = 18.6027 MElements/s, Time = 0.05637 s, Size = 1048576 elements, NumDevsUsed = 1, Workgroup = 256
+
+Validating the results...
+...reading back GPU results
+...inspecting keys array: OK
+...inspecting keys and values array: OK
+...stability property: NOT stable
+
 Shutting down...
-Test Summary...
-L1 norm        : 6.504269E-04
-Average reserve: 2.790815
+Built target run
 
 ```
 ## License
