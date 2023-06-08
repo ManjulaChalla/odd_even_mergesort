@@ -175,10 +175,10 @@ int main(int argc, char **argv) try {
 
   printf("Shutting down...\n");
   sdkDeleteTimer(&hTimer);
-  sycl::free(d_OutputVal, dpct::get_default_queue());
-  sycl::free(d_OutputKey, dpct::get_default_queue());
-  sycl::free(d_InputVal, dpct::get_default_queue());
-  sycl::free(d_InputKey, dpct::get_default_queue());
+  sycl::free(d_OutputVal, q);
+  sycl::free(d_OutputKey, q);
+  sycl::free(d_InputVal, q);
+  sycl::free(d_InputKey, q);
   free(h_OutputValGPU);
   free(h_OutputKeyGPU);
   free(h_InputVal);
