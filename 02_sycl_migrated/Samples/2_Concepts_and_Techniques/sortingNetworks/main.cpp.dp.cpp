@@ -83,30 +83,13 @@ int main(int argc, char **argv) try {
   }
 
   printf("Allocating and initializing CUDA arrays...\n\n");
-  /*
-  DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  
+ 
   d_InputKey = sycl::malloc_device<uint>(N,q);
   
-  /*
-  DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
   d_InputVal = sycl::malloc_device<uint>(N,q);
 
-  /*
-  DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  
   d_OutputKey = sycl::malloc_device<uint>(N,q);
   
-  /*
-  DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
   d_OutputVal = sycl::malloc_device<uint>(N,q);
   
   q.memcpy(d_InputKey, h_InputKey, N * sizeof(uint))
@@ -135,10 +118,6 @@ int main(int argc, char **argv) try {
       threadCount = oddEvenMergeSort(d_OutputKey, d_OutputVal, d_InputKey,
                                 d_InputVal, N / arrayLength, arrayLength, DIR,q);
 
-    /*
-    DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted.
-    You may need to rewrite this code.
-    */
     q.wait_and_throw();
 
     sdkStopTimer(&hTimer);
