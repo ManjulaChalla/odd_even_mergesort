@@ -41,6 +41,8 @@ This sample is migrated from NVIDIA CUDA sample. See the [sortingNetworks](https
 
 For more information on how to install SYCLomatic Tool, visit [Migrate from CUDA* to C++ with SYCL*](https://www.intel.com/content/www/us/en/developer/tools/oneapi/training/migrate-from-cuda-to-cpp-with-sycl.html#gs.v3584e).
 
+For more information on how to install oneAPI Base Toolkit, visit [Intel oneAPI Base Toolkit installation](https://www.intel.com/content/www/us/en/docs/oneapi-base-toolkit/get-started-guide-linux/2023-0/overview.html7).
+
 ## Key Implementation Details
 This sample demonstrates the migration of the following prominent CUDA features: 
 - Cooperative Groups
