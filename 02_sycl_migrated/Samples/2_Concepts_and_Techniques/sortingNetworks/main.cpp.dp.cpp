@@ -54,9 +54,8 @@ using namespace sycl;
 int main(int argc, char **argv) try {
   
   printf("%s Starting...\n\n", argv[0]);
-
-  printf("Starting up CUDA context...\n");
-   sycl::queue q = sycl::queue(default_selector_v);
+  
+ queue q{default_selector_v, property::queue::in_order()};
    std::cout << "\nRunning on " << q.get_device().get_info<info::device::name>()
             << "\n";
 
