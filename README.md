@@ -38,11 +38,11 @@ This sample is migrated from NVIDIA CUDA sample. See the [sortingNetworks](https
 |:---                               |:---
 | OS                                | Ubuntu* 20.04
 | Hardware                          | Intel® Gen9, Gen11 and Intel® Xeon(R) Gold 6128 CPU
-| Software                          | SYCLomatic version 2023.1, Intel oneAPI Base Toolkit version 2023.1
+| Software                          | SYCLomatic version 2023.1, Intel oneAPI Base Toolkit(Base Kit) version 2023.1
 
-For more information on how to install SYCLomatic Tool, visit [Migrate from CUDA* to C++ with SYCL*](https://www.intel.com/content/www/us/en/developer/tools/oneapi/training/migrate-from-cuda-to-cpp-with-sycl.html#gs.v3584e).
+For more information on how to install SYCLomatic Tool, refer to the [Migrate from CUDA* to C++ with SYCL*](https://www.intel.com/content/www/us/en/developer/tools/oneapi/training/migrate-from-cuda-to-cpp-with-sycl.html#gs.v3584e) page.
 
-For more information on how to install oneAPI Base Toolkit, visit [Intel oneAPI Base Toolkit installation](https://www.intel.com/content/www/us/en/docs/oneapi-base-toolkit/get-started-guide-linux/2023-1/overview.html).
+> **Note**: Read the [Get Started with the Intel® oneAPI Base Toolkit for Linux*](https://www.intel.com/content/www/us/en/docs/oneapi-base-toolkit/get-started-guide-linux/2023-1/overview.html) document for information on how to start using the Intel® oneAPI Base Toolkit.
 
 ## Key Implementation Details
 This sample demonstrates the migration of the following prominent CUDA features: 
@@ -61,25 +61,33 @@ This sample demonstrates the migration of the following prominent CUDA features:
 >
 >For more information on environment variables, see [Use the setvars Script with Linux* or macOS*](https://www.intel.com/content/www/us/en/develop/documentation/oneapi-programming-guide/top/oneapi-development-environment-setup/use-the-setvars-script-with-linux-or-macos.html), or [Windows](https://www.intel.com/content/www/us/en/develop/documentation/oneapi-programming-guide/top/oneapi-development-environment-setup/use-the-setvars-script-with-windows.html).
 
-## Tool assisted migration – SYCLomatic 
+## Assisted Migration with SYCLomatic
 
 For this sample, the SYCLomatic Tool automatically migrates 100% of the CUDA code to SYCL. Follow these steps to generate the SYCL code using the compatibility tool:
 
-1. git clone https://github.com/NVIDIA/cuda-samples.git
-2. cd cuda-samples/Samples/2_Concepts_and_Techniques/sortingNetworks
+1. Clone the repository.
+   ```
+   git clone https://github.com/NVIDIA/cuda-samples.git
+   ```
+2. Change to the relevant folder.
+   ```
+   cd cuda-samples/Samples/2_Concepts_and_Techniques/sortingNetworks
+   ```
 3. Generate a compilation database with intercept-build
    ```
    intercept-build make
    ```
-4. The above step creates a JSON file named compile_commands.json with all the compiler invocations and stores the names of the input files and the compiler options.
-5. Pass the JSON file as input to the Intel® SYCLomatic Compatibility Tool. The result is written to a folder named dpct_output. The --in-root specifies path to the root of the source tree to be migrated.
+   This step creates a JSON file named compile_commands.json with all the compiler invocations and stores the names of the input files and the compiler options.
+
+5. Pass the JSON file as input to the SYCLomatic compatibility tool. The result is written to a folder named dpct_output. The --in-root specifies path to the root of the source tree to be migrated.
    ```
    c2s -p compile_commands.json --in-root ../../.. --use-custom-helper=api
    ```
+   
 ### On Linux*
 
-Perform the following steps:
 1. Change to the sample directory.
+
 2. Build the program.
    ```
    $ mkdir build
@@ -87,8 +95,8 @@ Perform the following steps:
    $ cmake ..
    $ make
    ```
+   By default, this command sequence will build the `01_dpct_output`and `02_sycl_migrated` versions of the program.
 
-    By default, this command sequence will build the `01_dpct_output`and `02_sycl_migrated` versions of the program.
 3. Run `02_sycl_migrated` for  GPU.
      ```
     make run
@@ -273,6 +281,7 @@ Built target run
 
 ```
 ## License
+
 Code samples are licensed under the MIT license. See
 [License.txt](https://github.com/oneapi-src/oneAPI-samples/blob/master/License.txt) for details.
 
