@@ -1,11 +1,12 @@
-﻿# `oddEvenMergeSort` Sample
+﻿# `odd-even mergesort` Sample
 
-The `oddEvenMergeSort` sample demonstrates how to use the **odd-even mergesort** algorithm (also known as "Batcher's odd–even mergesort"), which belongs to the class of sorting networks. Generally, this algorithm is not efficient for large sequences compared to algorithms with better asymptotic algorithmic complexity (merge sort or radix sort); however, this sort method might be the preferred algorithm for sorting batches of short-sized to mid-sized (key, value) array pairs.
+The `odd-even mergesort` sample demonstrates how to use the **odd-even mergesort** algorithm (also known as "Batcher's odd–even mergesort"), which belongs to the class of sorting networks. Generally, this algorithm is not efficient for large sequences compared to algorithms with better asymptotic algorithmic complexity (merge sort or radix sort); however, this sort method might be the preferred algorithm for sorting batches of short-sized to mid-sized (key, value) array pairs.
 
-| Property            | Description
+| Area            | Description
 |:---                 |:---
 | What you will learn | How to begin migrating CUDA to SYCL
 | Time to complete    | 15 minutes
+| Category            | Code Optimization
 
 ## Purpose
 The **odd-even mergesort** algorithm was developed by Kenneth Edward Batcher.
