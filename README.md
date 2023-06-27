@@ -6,7 +6,6 @@ The `odd-even mergesort` sample demonstrates how to use the **odd-even mergesort
 |:---                 |:---
 | What you will learn | How to begin migrating CUDA to SYCL
 | Time to complete    | 15 minutes
-| Category            | Code Optimization
 
 ## Purpose
 
